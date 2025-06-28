@@ -1,2 +1,26 @@
 # Basics_C
 C++ Basics Code  Snippet
+
+
+GitHub basics
+
+
+git config --global user.name "<username>"
+git config --global user.email "<email-id>"
+git config --list
+
+
+Clone & Status
+
+Clone - Cloning a repository on our local machine.
+  git clone <-some_link->
+Status - display the state of code
+  git status
+
+add - adds new or changes files in your working directory to the Git staging area.
+    git add <file name>
+
+commit - It is the record of change.
+   git commit -m "some message"
+
+  
