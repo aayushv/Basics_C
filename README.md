@@ -23,4 +23,5 @@ add - adds new or changes files in your working directory to the Git staging are
 commit - It is the record of change.
    git commit -m "some message"
 
-  
+push - upload local repo content to remote repo
+  git push origin master
