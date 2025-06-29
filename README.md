@@ -55,3 +55,16 @@ git checkout -b <new branch name> [to create new branch]
 
 git branch -d <branch name> [to delete branch]
 
+Merging Code
+
+Way 1 
+
+git diff <branch name> [to compare commits, branches, files and more]
+
+git merge <branch name> [to merge 2 branches]
+
+
+Way 2
+
+
+Create a PR
