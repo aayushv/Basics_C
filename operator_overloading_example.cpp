@@ -95,3 +95,150 @@ int main()
 
     return 0;
 }
+
+
+
+
+
+
+/*
+
+Sample Excercise
+
+
+#include<iostream>
+#include<vector>
+#include<string>
+#include<ostream>
+
+using namespace std;
+
+class watch
+{
+    private:
+    string name;
+    int cost;
+
+    public:
+
+    watch(string watchName, int cost)
+    {
+        this->name = watchName;
+        this->cost=cost;
+    }
+
+    void setName(string newWatchName)
+    {
+        this->name = newWatchName;
+    }
+
+
+    bool operator==(const watch &w) const
+    {
+        return this->name==w.name;
+    }
+
+    string getName(){return name;}
+    int getCost(){return cost;}
+    
+};
+
+ostream& operator<<(ostream& COUT, watch &w)
+{
+    COUT<<"Watch Name : "<<w.getName()<<endl;
+    COUT<<"Watch Cost : $"<<w.getCost()<<endl;
+    return COUT;
+}
+
+class watchCollection
+{
+    private:
+    vector<watch> collection;
+
+    public:
+
+    watchCollection()
+    {
+        collection.clear();
+    }
+
+    watchCollection& operator+=(const watch &w)
+    {
+        collection.push_back(w);
+        return (*this);
+    }
+
+    int getSize() const
+    {
+        return collection.size();
+    }
+
+    watch& getAt(int index)
+    {
+        return collection[index];
+    }
+
+    watchCollection& operator-=(watch &w)
+    {
+        auto itr = find(collection.begin(),collection.end(),w);
+
+        if(itr!=collection.end())
+        {
+            collection.erase(itr);
+        }
+
+        return *this;
+    }
+
+  
+
+};
+
+ostream& operator<<(ostream& COUT, watchCollection& wc)
+{
+    COUT<<"Total Waltches in Collection : "<<wc.getSize()<<endl;
+    if(wc.getSize() == 0)
+    {
+        COUT<<"No watches in the collection."<<endl;
+        return COUT;
+    }
+    COUT<<"Watch Collection Details : "<<endl;
+    for(int i=0;i<wc.getSize();i++)
+    {
+        COUT<<wc.getAt(i)<<endl;
+    }
+
+    return COUT;
+}
+
+
+
+int main()
+{
+
+    watch *w1 = new watch("ORIS",1000);
+    cout<<(*w1)<<endl;
+    
+    watch w2("IWC",2000);
+
+    watchCollection *wc = new watchCollection();
+
+    ((*wc)+=(*w1))+=(w2);
+
+    cout<<(*wc)<<endl;
+
+    ((*wc)-=w2)-=(*w1);
+    cout<<(*wc)<<endl;
+
+    delete w1;
+    delete wc;
+
+
+
+    
+};
+
+
+
+
+*/
